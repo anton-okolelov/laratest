@@ -12,7 +12,7 @@ class Controller
     public function index()
     {
         $res = \DB::connection('mysql')->select('select 1');
-        \Log::Info("Test logging message", ['x' => 'y', 'res' => $res]);
+        \Log::Info("Test logging message", [ 'host' => $_SERVER['HTTP_HOST'], 'res' => $res]);
         return "Hello, world!";
     }
 }
